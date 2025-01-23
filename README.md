@@ -1,5 +1,6 @@
 # Baekjoon-Algorithm-study
 > Codeit Sprint Spring Boot 1기 - "JAVA로 코테 뿌수기" 스터디
+</br>
 
 ## 📝 스터디 규칙
 1. 장소: 디스코드 
@@ -13,23 +14,28 @@
    - 스터디는 카메라를 켜고 진행
    - 5 ~ 10분 아이스 브래이킹 및 각자 인상 깊었던 문제 풀이 공유
    - 각 스터디원은 풀이법 공유시 이번 주에 정리 및 알게된 알고리즘이 있다면 추가적인 설명
-
+</br>
 ## 📂 폴더 구조
 > week01/BOJ_18258/큐2_박유진 
 
 source root 추가하여 각 폴더에서 실행 가능하도록 하였습니다. 따라서 각 주차의 문제 폴더 안에 {문제이름}_{홍길동}.java와 같은 형식의 이름으로 파일을 생성해서 문제를 풀어주시면 됩니다.
 
-<details><summary> 실행 테스트
+<details><summary> 실행 예시
 </summary>
-*Write here!*
+   
+![실행예시](https://github.com/user-attachments/assets/70d71b89-8896-42a1-9de2-9556914696d3)
+
 </details>
- 
+</br>
+
+
 ## 👏 브랜치 규칙
 `문제이름_홍길동` 형식으로 작성해주세요.
 > (예시)
 > ```
 > git branch 큐2_박유진
 > ```
+</br>
 
 ## 🔃 PR 및 커밋 메세지 규칙
 PR제목과 커밋 메세지는 ` 문제이름 / 난이도 / 걸린시간(분 단위) / 해결 여부(O/X) ` 형식으로 작성해주세요.
@@ -53,7 +59,7 @@ PR제목과 커밋 메세지는 ` 문제이름 / 난이도 / 걸린시간(분 �
 > 
 > ### 코드 리뷰시 요청사항
 > ```
-
+</br>
 
 ## 🙋스터디원
 
@@ -69,7 +75,7 @@ PR제목과 커밋 메세지는 ` 문제이름 / 난이도 / 걸린시간(분 �
     </tr>
   </tbody>
 </table>
-
+</br>
 
 ## 🌟 레퍼런스
 - [백준 알고리즘 스터디](https://github.com/Stendhalsynd/baekjoon-algorithm-study/tree/main?tab=readme-ov-file)
