@@ -1,17 +1,15 @@
 package BOJ_18258;
 
 import java.io.*;
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-// https://www.acmicpc.net/problem/18258
 public class 큐2_김준우 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        Queue<Integer> queue = new ArrayDeque<>();
+        Queue<Integer> queue = new LinkedList<>();
 
         int n = Integer.parseInt(br.readLine());
         while (n-- > 0) {
@@ -34,7 +32,7 @@ public class 큐2_김준우 {
                     bw.write(queue.isEmpty() ? "-1" + "\n" : queue.peek() + "\n");
                     break;
                 case "back":
-                    bw.write(queue.isEmpty() ? "-1" + "\n"  : ((ArrayDeque<Integer>) queue).getLast() + "\n");
+                    bw.write(queue.isEmpty() ? "-1" + "\n"  : ((LinkedList<Integer>) queue).getLast() + "\n");
                     break;
                 default:
                     break;
