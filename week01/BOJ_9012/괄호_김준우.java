@@ -24,20 +24,20 @@ public class 괄호_김준우 {
     }
 
     public static boolean isVPS(String string) {
-        Stack<Character> queue = new Stack<>();
+        Stack<Character> stack = new Stack<>();
         char[] cArr = string.toCharArray();
         for (int i = 0; i < cArr.length; i++) {
             if (cArr[i] == '(') {
-                queue.push(cArr[i]);
+                stack.push(cArr[i]);
             } else {
-                if (queue.isEmpty()) {
+                if (stack.isEmpty()) {
                     return false;
                 } else {
-                    queue.pop();
+                    stack.pop();
                 }
             }
         }
-        if (queue.isEmpty()) {
+        if (stack.isEmpty()) {
             return true;
         }
         return false;
