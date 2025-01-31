@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class 큐2_한성지 {
@@ -15,7 +16,7 @@ public class 큐2_한성지 {
         int n = Integer.parseInt(br.readLine());
 
         // 큐 인터페이스 사용해서 구현
-        LinkedList<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
 
         // n번 반복
         for (int i = 0; i < n; i++) {
@@ -60,7 +61,7 @@ public class 큐2_한성지 {
                     if (queue.isEmpty()) {
                         sb.append(-1).append("\n");
                     } else {
-                        sb.append(queue.getLast()).append("\n");
+                        sb.append(((LinkedList<Integer>)queue).getLast()).append("\n");
                     }
                     break;
             }
