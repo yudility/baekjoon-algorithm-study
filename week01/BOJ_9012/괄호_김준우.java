@@ -1,8 +1,7 @@
 package BOJ_9012;
 
 import java.io.*;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class 괄호_김준우 {
@@ -25,16 +24,16 @@ public class 괄호_김준우 {
     }
 
     public static boolean isVPS(String string) {
-        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> queue = new Stack<>();
         char[] cArr = string.toCharArray();
         for (int i = 0; i < cArr.length; i++) {
             if (cArr[i] == '(') {
-                queue.add(cArr[i]);
+                queue.push(cArr[i]);
             } else {
                 if (queue.isEmpty()) {
                     return false;
                 } else {
-                    queue.poll();
+                    queue.pop();
                 }
             }
         }
