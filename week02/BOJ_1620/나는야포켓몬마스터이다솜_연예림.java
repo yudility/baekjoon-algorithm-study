@@ -34,15 +34,16 @@ public class 나는야포켓몬마스터이다솜_연예림 {
         // m 번 퀴즈 : 영어 -> 숫자, 숫자 -> 영어
         for (int i = 0; i < m; i++) {
             String question = br.readLine();
-            try {
+            char[] charList = question.toCharArray();
+
+            if (Character.isDigit(charList[0])) {
                 int num = Integer.parseInt(question);
                 sb.append(list.get(num - 1)).append("\n");
-            } catch (NumberFormatException e) {
+            } else {
                 sb.append(map.get(question)).append("\n");
             }
         }
         System.out.println(sb);
-        
-        // Character.isLetter or Character.isDigit 로 가능 / 시간 두 배 차이
+        // Character.isLetter or Character.isDigit 로 가능 isDigit이 조금 더 빠름.
     }
 }
