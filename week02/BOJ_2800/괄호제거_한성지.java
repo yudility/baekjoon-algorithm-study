@@ -72,10 +72,10 @@ public class 괄호제거_한성지 {
 
         // 현재 괄호 제거
         int[] pair = brackets.get(depth);   // 삭제한 괄호 위치
-        check[pair[0]] = true;              // 해당 괄호가 삭제됐음을 표시
+        check[pair[0]] = true;              // 삭제할 괄호 표시
         check[pair[1]] = true;
-        comb(depth + 1);              // 해당 괄호가 삭제된 상태로 다시 재귀함수 호출
-        check[pair[0]] = false;             // 해당 괄호가 삭제된 모든 경우의 수를 result에 저장한 후 다시 false로 변경
+        comb(depth + 1);              // 재귀함수 호출
+        check[pair[0]] = false;             // 괄호 삭제 후 false로 변경
         check[pair[1]] = false;
     }
 }
