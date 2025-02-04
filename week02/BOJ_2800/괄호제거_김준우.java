@@ -15,7 +15,7 @@ public class 괄호제거_김준우 {
         Stack<Integer> stack = new Stack<>();
         List<int[]> bracketPairs = new ArrayList<>();
 
-        // 괄호 위치 짝맞추기 -> 비트마스킹 사용(bit-masking)
+        // 괄호 위치 짝맞추기
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == '(') {
                 stack.push(i);
@@ -26,7 +26,7 @@ public class 괄호제거_김준우 {
             }
         }
 
-        // 모든 괄호 조합에 대해 문자열 생성 -> 이거는 좀 괜찮네
+        // 모든 괄호 조합에 대해 문자열 생성 -> 비트마스킹 사용(bit-masking)
         int pairCount = bracketPairs.size();
         for (int i = 1; i < (1 << pairCount); i++) { // 1부터 시작 (공집합 제외)
             Set<Integer> removeIndexes = new HashSet<>();
