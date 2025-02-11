@@ -9,8 +9,10 @@ import java.util.StringTokenizer;
 
 public class 폰호석만_박유진 {
 
-    static int x, a, b, cnt;
+    static long x, a, b;
+    static int cnt;
     static Map<String, Integer> nums;
+    static double max = Math.pow(2, 63);
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,16 +34,21 @@ public class 폰호석만_박유진 {
         String strA = st.nextToken(); //a진법 x
         String strB = st.nextToken(); //b진법 x
 
+        if(strA.equals("0") || strB.equals("0")) {
+            System.out.println("Multiple");
+            return;
+        }
+
         for (int i = 1; i <= 36; i++) {
             for (int j = 1; j <= 36; j++) {
                 //같은 경우 pass
                 if (i == j) continue;
 
                 //진법 변환
-                int ax = getX(strA, i);
-                int bx = getX(strB, j);
+                long ax = getX(strA, i);
+                long bx = getX(strB, j);
 
-                if (ax == -1 || bx == -1) continue;
+                if (ax == -1 || bx == -1 || ax > max ) continue;
                 if (ax == bx) {
                     cnt++;
                     if(cnt > 1) break;
@@ -64,7 +71,7 @@ public class 폰호석만_박유진 {
         }
     }
 
-    public static int getX(String str, int g) {
+    public static long getX(String str, int g) {
         int length = str.length();
         long x = 0;
 
@@ -82,10 +89,10 @@ public class 폰호석만_박유진 {
             x = x * g + currentNum;
 
             // 오버플로우 체크
-            if (x > Integer.MAX_VALUE) return -1;
+            if (x > max) return -1;
         }
 
-        return (int)x;
+        return x;
     }
 
     public static int getNum(char c, int place, int now, int gin) {
