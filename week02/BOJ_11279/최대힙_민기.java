@@ -1,6 +1,5 @@
 package BOJ_11279;
 
-
 import java.util.*;
 import java.io.*;
 
