@@ -79,6 +79,7 @@ public class 트리순회_박유진 {
     }
 
 //    처음 인덱스로 시도했던 코드
+//
 //    public static void main(String[] args) throws IOException {
 //
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
