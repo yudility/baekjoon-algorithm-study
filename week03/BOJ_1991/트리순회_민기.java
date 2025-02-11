@@ -31,12 +31,12 @@ public class 트리순회_민기 {
 
 			if (left != '.') {
 				parentNode.left = new Node(left);
-				tree.put(left,parentNode);
+				tree.put(left,parentNode.left);
 			}
 
 			if(right != '.') {
 				parentNode.right = new Node(right);
-				tree.put(right,parentNode);
+				tree.put(right,parentNode.right);
 			}
 		}
 
