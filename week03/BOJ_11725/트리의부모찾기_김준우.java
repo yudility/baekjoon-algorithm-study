@@ -6,8 +6,7 @@ public class 트리의부모찾기_김준우 {
     // 트리 구현 -> 2차원 배열 사용
     static int n;
     static boolean[] visited;
-    static List<Integer> tree[];
-    static Stack<Integer> stack = new Stack<>();
+    static List<Integer> tree[];   
     static int[] answer; // 크기 지정 필요
 
     public static void main(String[] args) {
