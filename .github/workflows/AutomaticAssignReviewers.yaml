@@ -12,6 +12,3 @@ jobs:
         with:
           assignees: ${{ github.actor }} # assign pull request author
           reviewers: foo, bar, baz # if draft, assigned when draft is released
-          
-permissions:
-  pull-requests: write
