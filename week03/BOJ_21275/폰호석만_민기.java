@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 public class 폰호석만_민기 {
 	// X는 0 이상 2^63 미만이어야 하므로 한계를 2^63로 설정합니다.
-	static final long LIMIT = 1L << 63; // 2^63
+	static final long LIMIT = (1L << 63); // 2^63
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,6 +23,18 @@ public class 폰호석만_민기 {
 		int foundBase1 = 0, foundBase2 = 0;
 		// 여러 조합이 존재하는지 확인하기 위한 flag
 		boolean multiple = false;
+
+		// 두 수가 모두 0인 경우 즉시 Multiple 출력
+		if (A.equals("0") && B.equals("0")) {
+			System.out.println("Multiple");
+			return;
+		}
+
+		// 길이가 70을 초과하는 경우 즉시 Impossible 출력
+		if (A.length() > 70 || B.length() > 70) {
+			System.out.println("Impossible");
+			return;
+		}
 
 		// 가능한 모든 진법 후보를 두 루프로 탐색합니다. (각 루프는 최소 진법부터 36까지)
 		for (int baseA = base1; baseA <= 36; baseA++) {
@@ -113,6 +125,7 @@ public class 폰호석만_민기 {
 	 * @return s를 해당 진법으로 변환한 10진수 값, 변환 불가능한 경우 -1
 	 */
 	static long convertToDecimal(String s, int base) {
+		if (s.equals("0")) return 0; // 0인 경우 즉시 반환
 		long result = 0;
 		// 문자열의 각 자릿수를 순회하면서 왼쪽부터 오른쪽으로 10진수 값을 계산합니다.
 		for (int i = 0; i < s.length(); i++) {
