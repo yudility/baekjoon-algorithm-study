@@ -11,15 +11,15 @@ public class 거스름돈_이유빈 {
 
         if (n < 5 && n % 2 != 0) {
             bw.write(-1+"");
-        }
-
-        int k = n / 5;
-        int m = n % 5;
-
-        if (m % 2 == 0) {
-            bw.write((m/2 + k) + "");
         } else {
-            bw.write(((k-1) + (m+5)/2) + "");
+            int k = n / 5;
+            int m = n % 5;
+
+            if (m % 2 == 0) {
+                bw.write((m/2 + k) + "");
+            } else {
+                bw.write(((k-1) + (m+5)/2) + "");
+            }
         }
 
         br.close();
