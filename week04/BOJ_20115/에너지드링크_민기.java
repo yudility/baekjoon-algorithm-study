@@ -3,18 +3,24 @@ package BOJ_20115;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class 에너지드링크_민기 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// 첫 번째 줄에서 N을 입력받음
+		int N = Integer.parseInt(br.readLine());
+
+		// 두 번째 줄의 에너지 드링크 양을 입력받음
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
 		//각 에너지드링크를 정렬하는게 좋을것 같아 priorityQueue 사용
-		PriorityQueue<Double> pq = new PriorityQueue<>();
+		PriorityQueue<Double> pq = new PriorityQueue<>(Collections.reverseOrder());
 
-		for (int i = 0; i < st.countTokens(); i++) {
+		// N번 만큼 반복하여 입력받음
+		for (int i = 0; i < N; i++) {
 			pq.add(Double.parseDouble(st.nextToken()));
 		}
 
