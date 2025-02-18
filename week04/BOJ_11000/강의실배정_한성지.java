@@ -44,7 +44,7 @@ public class 강의실배정_한성지 {
             q.offer(lectures[i].end);   // 큐에 해당 강의의 종료시간 넣음
         }
 
-        // 큐의 사이즈가 강의실 최대 개수
+        // 큐의 사이즈가 강의실 최소 개수
         System.out.println(q.size());
     }
 }
