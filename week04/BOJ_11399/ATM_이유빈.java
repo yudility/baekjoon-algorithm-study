@@ -13,7 +13,7 @@ public class ATM_이유빈 {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        arr = Arrays.stream(arr).sorted().toArray();
+        Arrays.sort(arr);
 
         int result = 0;
 
