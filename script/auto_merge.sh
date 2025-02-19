@@ -58,7 +58,7 @@ for PR_URL in $PRs; do
 done
 
 # 변경 사항 푸시
-git push
+git push --force main
 
 # 현재 브랜치로 돌아가기
 git checkout "$CURRENT_BRANCH"
