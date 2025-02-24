@@ -8,34 +8,37 @@ public class 소수최소공배수_김준우 {
         int n = sc.nextInt();
         Set<Integer> primes = new HashSet<>();
 
+        int max = 0;
         while (n-- > 0) {
             int num = sc.nextInt();
-            if (isPrime(num)) {
-                primes.add(num);
+            primes.add(num);
+            max = Math.max(max, num);
+        }
+
+        boolean[] isPrime = prime(max);
+
+        long answer = 1;
+
+        for (int prime : primes) {
+            if (!isPrime[prime]) {
+                answer *= prime;
             }
         }
 
-        // 소수가 존재하면 곱셈, 없으면 -1 반환
-        int answer = primes.stream()
-                .reduce((a, b) -> a * b)
-                .orElse(-1);
-
-        System.out.println(answer);
+        System.out.println(answer == 1 ? -1 : answer);
     }
 
-    public static boolean isPrime(int n) {
-        if (n < 2) {
-            return false;
-        }
-        if (n == 2) {
-            return true;
-        }
+    // 에라토스테네스의 체를 이용해 소수 판별
+    public static boolean[] prime(int n) {
+        boolean[] isPrime = new boolean[n + 1];
 
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (!isPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = true;
+                }
             }
         }
-        return true;
+        return isPrime;
     }
 }
