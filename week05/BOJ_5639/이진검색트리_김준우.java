@@ -1,5 +1,7 @@
 package BOJ_5639;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 class Node {
@@ -13,53 +15,46 @@ class Node {
 }
 
 public class 이진검색트리_김준우 {
-    static int current = 0;
-
-    public static Node buildTree(int[] preOrder, int start, int end) {
-        if (start > end) {
+    static int index = 0; // preorder 원소 값을 가져오기 위해서 사용
+    public static Node buildTree(List<Integer> preorder, int maxValue) {
+        if (index >= preorder.size() || preorder.get(index) > maxValue) {
             return null;
         }
 
-        Node node = new Node(preOrder[current]);
-        current++;
+        Node root = new Node(preorder.get(index++));
 
-        if (start == end) {
-            return node;
-        }
+        // 왼쪽 서브트리 생성 (현재 노드보다 작은 값들만 가능)
+        root.left = buildTree(preorder, root.data);
 
-        int index = start;
-        while (index <= end && preOrder[index] < node.data) {
-            index++;
-        }
+        // 오른쪽 서브트리 생성 (현재 노드보다 큰 값들만 가능)
+        root.right = buildTree(preorder, maxValue);
 
-        node.left = buildTree(preOrder, start + 1, index - 1);
-        node.right = buildTree(preOrder, index, end);
-
-        return node;
+        return root;
     }
 
     public static void postOrder(Node node) {
-        if (node != null) {
-            postOrder(node.left);
-            postOrder(node.right);
-            System.out.println(node.data);
+        if (node == null) {
+            return;
         }
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.data);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // 전위순회한 결과가 한 줄씩 주어지므로, 입력이 끝날 때까지 읽어들임
-        int[] preOrder = new int[10000]; // 충분히 큰 크기 설정
-        int idx = 0;
-
+        List<Integer> preOrder = new ArrayList<>();
         while (sc.hasNext()) {
-            preOrder[idx++] = sc.nextInt();
+            String input = sc.nextLine();
+            if (input.isEmpty()) {
+                break;
+            }
+            preOrder.add(Integer.parseInt(input));
         }
 
-        // 전위 순회 배열 길이
-        int n = idx;
-
-        Node root = buildTree(preOrder, 0, n - 1);
+        Node root = buildTree(preOrder, Integer.MAX_VALUE);
         postOrder(root);
     }
 }
+
