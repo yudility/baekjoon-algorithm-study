@@ -6,22 +6,22 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
+class NodeY {
   int value;
-  Node left;
-  Node right;
+  NodeY left;
+  NodeY right;
 
-  public Node(int value, Node left, Node right) {
+  public NodeY(int value, NodeY left, NodeY right) {
     this.value = value;
     this.left = left;
     this.right = right;
   }
 
-  public void setLeft(Node left) {
+  public void setLeft(NodeY left) {
     this.left = left;
   }
 
-  public void setRight(Node right) {
+  public void setRight(NodeY right) {
     this.right = right;
   }
 }
@@ -44,7 +44,7 @@ public class 이진검색트리_연예림 {
     }
 
     start = queue.poll();
-    Node root = new Node(start, null, null);
+    NodeY root = new NodeY(start, null, null);
 
     while(!queue.isEmpty()) {
       createNode(root, queue.poll());
@@ -58,7 +58,7 @@ public class 이진검색트리_연예림 {
   }
 
   // 방문
-  public static void visit(Node node) {
+  public static void visit(NodeY node) {
     if (node == null) {
       return;
     }
@@ -67,10 +67,10 @@ public class 이진검색트리_연예림 {
     sb.append(node.value).append("\n");
   }
 
-  public static Node createNode(Node node, int input) {
+  public static NodeY createNode(NodeY node, int input) {
     // 노드가 없으면 추가
     if (node == null) {
-      return new Node(input, null, null);
+      return new NodeY(input, null, null);
     }
 
     // 현재 노드값보다 작으면 왼쪽 노드와 함께 넘김
