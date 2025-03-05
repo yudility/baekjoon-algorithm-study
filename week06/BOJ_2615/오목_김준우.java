@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class 오목_김준우 {
     static int n = 19;
     static int[][] board = new int[n][n];
-    static int[] dx = {0, 1, 1, -1};
-    static int[] dy = {1, 1, 0, 1};
+    static int[] dx = {0, 1, 1, 1}; // →, ↘, ↓, ↙
+    static int[] dy = {1, 1, 0, -1};
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -40,8 +40,13 @@ public class 오목_김준우 {
 
                             if ((prevX < 0 || prevX >= n || prevY < 0 || prevY >= n || board[prevX][prevY] != color)
                                     && (nextX < 0 || nextX >= n || nextY < 0 || nextY >= n || board[nextX][nextY] != color)) {
-                                System.out.println(color);
-                                System.out.println((i + 1) + " " + (j + 1));
+                                if (dir == 3) { // ↙ 방향이면 가장 왼쪽 돌을 출력해야 함
+                                    System.out.println(color);
+                                    System.out.println((i + 4 + 1) + " " + (j - 4 + 1));
+                                } else {
+                                    System.out.println(color);
+                                    System.out.println((i + 1) + " " + (j + 1));
+                                }
                                 return;
                             }
                         }
