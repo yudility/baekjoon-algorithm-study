@@ -1,5 +1,5 @@
 package BOJ_14501;
-
+//https://dinist.tistory.com/30
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,21 +8,16 @@ import java.util.StringTokenizer;
 public class 퇴사_연예림 {
   //15분
 
-  static int[] times;
-  static int[] pays;
-  static int N;
-
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st;
 
-    N = Integer.parseInt(br.readLine());
+    int N = Integer.parseInt(br.readLine());
 
-    times = new int[N+1];
-    pays = new int[N+1];
-
-    times[0] = 1;
-    pays[0] = 0;
+    int max = 20;
+    int[] times = new int[max];
+    int[] pays = new int[max];
+    int[] dp = new int[max];
 
     //입력
     for (int i = 1; i <= N; i++) {
@@ -31,29 +26,15 @@ public class 퇴사_연예림 {
       pays[i] = Integer.parseInt(st.nextToken());
     }
 
-    System.out.println(calcPay(1,0));
-
-  }
-
-  public static int calcPay(int current, int sumPay) {
-    if (N < current) {
-      return sumPay;
-    }
-//    if (N - current + 1 < times[current]) { // 퇴사 전까지 불가능
-//      return 0;
-//    }
-
-    int maxPay = sumPay;
-    int check = 0;
-    while (check < times[current] && (current + check) <= N) { // 얘 포함 건너뛰는 것들을 계산해서 max를 계산하는 건데.
-        int getPay = calcPay((current + check) + times[current + check],
-            sumPay + pays[current + check]); // 넘어갈 일 수, 현재까이의 total 페이
-        if (getPay > maxPay) {
-          maxPay = getPay;
-        }
-        check++;
+    for (int i = N; i > 0; i--) {
+      if (times[i] > N - i + 1) {
+        dp[i] = dp[i+1];
+      } else {
+        dp[i] = Math.max(pays[i] + dp[i+times[i]] , dp[i+1]);
+        // 현재 날짜의 pay + 이후 남은 날짜의 최대 페이 vs 이전 날짜의 최대페이
+      }
     }
 
-    return maxPay;
+    System.out.println(dp[1]);
   }
 }
