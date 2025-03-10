@@ -12,6 +12,15 @@
       <sourceFolder url="file://$MODULE_DIR$/week04" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week05" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week06" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week07" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week08" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week09" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week11" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week12" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week13" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week14" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week15" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
