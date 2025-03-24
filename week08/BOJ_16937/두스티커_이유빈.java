@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 두스티커_이유빈 {
-  static int H, W, n, h, w;
-  static int result;
-  static int[][] stickers;
+  static int H, W, n;
+  static int result = 0;
+  static Sticker[] stickers;
   static StringTokenizer st;
 
   public static void main(String[] args) throws IOException {
@@ -18,22 +18,22 @@ public class 두스티커_이유빈 {
     W = Integer.parseInt(st.nextToken());
     n = Integer.parseInt(br.readLine());
 
-    stickers = new int[n][2];
+    stickers = new Sticker[n];
     for (int i = 0; i < n; i++) {
       st = new StringTokenizer(br.readLine());
-      stickers[i][0] = Integer.parseInt(st.nextToken());
-      stickers[i][1] = Integer.parseInt(st.nextToken());
+      int h = Integer.parseInt(st.nextToken());
+      int w = Integer.parseInt(st.nextToken());
+      stickers[i] = new Sticker(h, w);
     }
 
-    result = 0;
     firstStick();
-    System.out.print(result);
+    System.out.println(result);
   }
 
   static void firstStick() {
     for (int i=0; i<n; i++) {
-      h = stickers[i][0];
-      w = stickers[i][1];
+      Sticker sticker = stickers[i];
+      int h = sticker.h, w = sticker.w;
 
       if (h <= H && w <= W) {
         secondSticker(H - h, W - w, i+1, h * w);
@@ -47,18 +47,29 @@ public class 두스티커_이유빈 {
   }
 
   static void secondSticker(int newH, int newW, int idx, int size) {
-    for (int i=idx; i<n; i++) {
-      h = stickers[i][0];
-      w = stickers[i][1];
+    for (int i = idx; i < n; i++) {
+      Sticker sticker = stickers[i];
+      int h = sticker.h, w = sticker.w;
 
       if ((h <= newH && w <= W) || (h <= H && w <= newW)) {
         result = Math.max(result, size + h * w);
       }
 
       // 90도 회전
-      if ((w <= newH && h <= W) || (w <= H && h <= newW)) {
+      h = sticker.w;
+      w = sticker.h;
+      if ((h <= newH && w <= W) || (h <= H && w <= newW)) {
         result = Math.max(result, size + h * w);
       }
+    }
+  }
+
+  static class Sticker {
+    int h, w;
+
+    public Sticker(int h, int w) {
+      this.h = h;
+      this.w = w;
     }
   }
 }
