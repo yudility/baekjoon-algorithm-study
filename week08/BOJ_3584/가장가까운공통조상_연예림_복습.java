@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class 가장가까운조상_연예림_복습 {
+public class 가장가까운공통조상_연예림_복습 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
