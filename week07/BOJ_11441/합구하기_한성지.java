@@ -1,4 +1,4 @@
-package BOJ_3020;
+package BOJ_11441;
 
 import java.io.BufferedReader;
 import java.io.IOException;
