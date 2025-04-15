@@ -40,7 +40,7 @@ public class 다리놓기_한성지 {
       return dp[m][n] = 1;
     }
 
-    // mCn == m-1Cn-1 + m-1Cn
+    // mCn == (m-1)C(n-1) + (m-1)Cn
     return dp[m][n] = bc(m - 1, n - 1) + bc(m - 1, n);
   }
 }
