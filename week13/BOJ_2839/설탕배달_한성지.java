@@ -18,12 +18,9 @@ public class 설탕배달_한성지 {
     five = N / 5;
     solution(five);
 
-    // 3 또는 5킬로 봉지만 썼을 때 개수가 더 적을 수 있으므로 검사
+    // 3킬로 봉지만 썼을 때 개수가 더 적을 수 있으므로 검사
     if (N % 3 == 0 && answer > N / 3) {
       answer = N / 3;
-    }
-    if (N % 5 == 0 && answer > N / 5) {
-      answer = N / 5;
     }
 
     System.out.println(answer);
