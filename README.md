@@ -68,7 +68,7 @@ PR제목과 커밋 메세지는 ` 문제이름 / 난이도 / 걸린시간(분 �
   <tbody>
     <tr>
       <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/78692557?s=400&u=90aebdf3bc180f3661f3b132088f1b40429c5270&v=4" width="100px;" alt=""/><br /><sub><b> 박유진 </b></sub></a><br /></td>
-<td align="center"><a href="https://github.com/GiMin0123"><img src="https://avatars.githubusercontent.com/u/111266826?v=4" width="100px;" alt=""/><br /><sub><b> 민기 </b></sub></a><br /></td>
+<td align="center"><a href="https://github.com/GiMin0123"><img src="https://avatars.githubusercontent.com/u/111266826?v=4" width="100px;" alt=""/><br /><sub><b> 민기  </b></sub></a> </br> ~ 25. 05. 28 <br /></td>
 <td align="center"><a href="https://github.com/hyanyul"><img src="https://avatars.githubusercontent.com/u/158116933?v=4" width="100px;" alt=""/><br /><sub><b> 한성지 </b></sub></a><br /></td>
 <td align="center"><a href="https://github.com/iiyubb"><img src="https://avatars.githubusercontent.com/u/80386881?v=4" width="100px;" alt=""/><br /><sub><b> 이유빈 </b></sub></a><br /></td>
 <td align="center"><a href="https://github.com/normaldeve"><img src="https://avatars.githubusercontent.com/u/128487020?v=4" width="100px;" alt=""/><br /><sub><b> 김준우 </b></sub></a><br /></td>
