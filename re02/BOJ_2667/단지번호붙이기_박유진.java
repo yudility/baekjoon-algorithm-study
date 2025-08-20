@@ -21,7 +21,7 @@ public class 단지번호붙이기_박유진 {
       int ny = y + dy[i];
       int nx = x + dx[i];
 
-      if (ny < 0 || nx < 0 || nx > n || ny > n) {
+      if (ny < 0 || nx < 0 || nx >= n || ny >= n) {
         continue;
       }
       if (visited[ny][nx] || map[ny][nx] != 1) {
