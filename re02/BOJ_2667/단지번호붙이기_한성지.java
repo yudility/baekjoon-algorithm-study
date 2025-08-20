@@ -13,7 +13,6 @@ class 단지번호붙이기_한성지 {
   static boolean[][] visit;    // 방문 여부
   static int[] dx = {0, 1, 0, -1};    // 상하좌우 좌표
   static int[] dy = {1, 0, -1, 0};
-  static int count = 0;    // 단지 수
   static int houseCount;    // 단지 내 집 수
   static ArrayList<Integer> answer = new ArrayList<>();
   static StringBuilder sb = new StringBuilder();
@@ -36,7 +35,6 @@ class 단지번호붙이기_한성지 {
         if (!visit[i][j] && map[i][j] == 1) {    // 방문한 적 없고, 집 있을 경우
           houseCount = 0;
           dfs(i, j);
-          count++;
           answer.add(houseCount);
         }
       }
@@ -48,7 +46,7 @@ class 단지번호붙이기_한성지 {
       sb.append(n).append("\n");
     }
 
-    System.out.println(count);
+    System.out.println(answer.size());
     System.out.print(sb);
   }
 
@@ -61,7 +59,7 @@ class 단지번호붙이기_한성지 {
       int cy = y + dy[i];
 
       if (cx >= 0 && cy >= 0 && cx < N && cy < N) {    // 지도 내의 좌표이고
-        if (!visit[cx][cy] && map[cx][cy] == 1) {    // 방문한 적 없으며, 집이 있을 때
+        if (!visit[cx][cy] && map[cx][cy] == 1) {    // 방문한적 없으며, 집이 있을 때
           dfs(cx, cy);    // 재귀호출을 통한 깊이 탐색
         }
       }
